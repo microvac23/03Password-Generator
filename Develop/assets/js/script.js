@@ -1,13 +1,14 @@
 // Assignment code here
-var lowercase = "abcdefghijklmnopqrstuvwxyz"
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var numeric = "1234567890"
-var special = "!@#$%^&*()"
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numeric = "1234567890";
+var special = "!@#$%^&*()";
+var password = "";
 
 console.log(lowercase);
 console.log(uppercase);
 console.log(numeric);
-console.log(special)
+console.log(special);
 
 
 // Get references to the #generate element
@@ -48,26 +49,35 @@ function generatePassword() {
     criteriaCharacters = criteriaCharacters.concat(special)
   } 
   console.log(criteriaCharacters);
+
   
-  
-  newCharacter = "";
-  function generateP() {
-    var randomP = "";
-    for (var i = 0; i < 2; i++) {
-      function generateC() {
-        var randomIndex = Math.floor(Math.random() * criteriaCharacters.length);
-        var newCharacter = criteriaCharacters[randomIndex];
-        randomP[i] = randomP.push(newCharacter)
-        console.log(randomP, randomIndex);
-      }
+  for (i = 0; i < characterLength; i++) {
+    var randomCharacter = criteriaCharacters[Math.floor(Math.random() * criteriaCharacters.length)]
+    console.log(randomCharacter);
     
-    }
+    password = password.concat(randomCharacter[i])
+    
   }
-  generateC();
-  generateP();
-   
-  } 
+  console.log(password)
   
+  return(password);
+  } 
+ 
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener('click', writePassword);
+
+ 
   //from the matching characters, 
   //pick a random one
   // add it onto randomP array
@@ -82,15 +92,18 @@ function generatePassword() {
   console.log(randomCharacter);
  */
 
+ /*  function generateP() {
+    var randomP = "";
+    for (var i = 0; i < 2; i++) {
+       {
+        var randomIndex = Math.floor(Math.random() * criteriaCharacters.length);
+        var newCharacter = criteriaCharacters[randomIndex];
+        randomP[i] = randomP.push(newCharacter)
+        console.log(randomP, randomIndex);
+      }
+    
+    }
+  }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+  generateP();
+    */
