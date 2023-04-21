@@ -44,13 +44,12 @@ function generatePassword() {
   } 
   console.log(criteriaCharacters);
 
-  
+    //random character generator
   for (i = 0; i < characterLength; i++) {
     var randomCharacter = criteriaCharacters[Math.floor(Math.random() * criteriaCharacters.length)]
     console.log(randomCharacter[i]);
-    placeHold = ""
-    /* password = placeHold.prototype.push(randomCharacter[i]) */
-    
+    password = ""
+    password =+ randomCharacter[i];
   }
   console.log(password)
   
