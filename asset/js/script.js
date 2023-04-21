@@ -5,12 +5,6 @@ var numeric = "1234567890";
 var special = "!@#$%^&*()";
 var password = "";
 
-console.log(lowercase);
-console.log(uppercase);
-console.log(numeric);
-console.log(special);
-
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -53,9 +47,9 @@ function generatePassword() {
   
   for (i = 0; i < characterLength; i++) {
     var randomCharacter = criteriaCharacters[Math.floor(Math.random() * criteriaCharacters.length)]
-    console.log(randomCharacter);
-    
-    password = password.concat(randomCharacter[i])
+    console.log(randomCharacter[i]);
+    placeHold = ""
+    /* password = placeHold.prototype.push(randomCharacter[i]) */
     
   }
   console.log(password)
@@ -76,34 +70,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-
- 
-  //from the matching characters, 
-  //pick a random one
-  // add it onto randomP array
-  //generate randomP array until index = characterLength - 1
-  //
-
-/*   var randomCharacter = criteriaCharacters[Math.floor(Math.random()*criteriaCharacters.length)]
-  
-  var randomP = "";
-  randomP = randomP.push(randomCharacter)
-  console.log(randomP);
-  console.log(randomCharacter);
- */
-
- /*  function generateP() {
-    var randomP = "";
-    for (var i = 0; i < 2; i++) {
-       {
-        var randomIndex = Math.floor(Math.random() * criteriaCharacters.length);
-        var newCharacter = criteriaCharacters[randomIndex];
-        randomP[i] = randomP.push(newCharacter)
-        console.log(randomP, randomIndex);
-      }
-    
-    }
-  }
-
-  generateP();
-    */
